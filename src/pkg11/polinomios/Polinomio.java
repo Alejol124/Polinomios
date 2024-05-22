@@ -215,12 +215,11 @@ public class Polinomio {
         Polinomio residuo = new Polinomio();
         Nodo apuntador1 = p1.getMayorExponente();
         Nodo apuntador2 = p2.getMayorExponente();
-        Nodo apuntadorC = cociente.getCabeza();
 
         while (apuntador1 != null && apuntador2 != null && esDivisible(apuntador1, apuntador2)) {
             Nodo n = new Nodo(apuntador1.coeficiente / apuntador2.coeficiente, apuntador1.exponente - apuntador2.exponente);
             cociente.agregar(n);
-            System.out.println(n);
+           
             p1 = multiplicar(cociente, p2);
             residuo = restar(dividendo, p1);
 
